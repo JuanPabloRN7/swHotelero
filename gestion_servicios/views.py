@@ -13,6 +13,4 @@ def registrar(request):
         servicio.precio = datos_servicio.get('precio')
         servicio.uso = datos_servicio.get('uso')
         servicio.save()
-    else:
-        print("No validos")
     return render(request, 'servicios/guiRegistrarServicio.html', locals())
