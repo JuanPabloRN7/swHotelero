@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'swHotelero.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sw_ventas',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME':'hotelCardenal',
+        'USER':'usuarioEvento',
+        'PASSWORD':'eventos45-',
+        'HOST':'localhost',
+        'PORT':''
     }
 }
 
