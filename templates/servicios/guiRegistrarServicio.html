@@ -8,12 +8,44 @@
 </head>
 <body>
     <h1>Registro de servicios</h1>
-    <form action="/registrar/" method="POST">
-        <p>Tipo servicio: <input type="text" name="tipoServicio"></p>
-        <p>Precio: <input type="text" name="precioServicio"></p>
-        <p>Cliente: <input type="text" name="clienteServicio"></p>
-        <p>Uso: <input type="text" name="usoServicio"></p>
-        <input type="submit" value="Registrar">
+    <form action="/servicios/nuevo/" method="POST"> {% csrf_token %}
+        <div class="form-group row">
+            <label class = "control-label col-md-3">Tipo Servicio</label>
+            <div class="col-md-8">
+                {{formulario_servicio.tipo}}
+            </div> 
+        </div>
+        <div class="form-group row">
+            <label class = "control-label col-md-3">Precio</label>
+            <div class="col-md-8">
+                {{formulario_servicio.precio}}
+            </div> 
+        </div>
+        <div class="form-group row">
+            <label class = "control-label col-md-3">Cliente</label>
+            <div class="col-md-9">
+                <div class="form-check">
+                    <select class="form-check-select">
+                        {% for cliente in listaCliente %}
+                            <option>{{cliente.cedula}}</option>
+                            {% endfor %}  
+                    </select>
+                </div>  
+            </div> 
+        </div>
+        <div class="form-group row">
+            <label class = "control-label col-md-3">Uso en horas</label>
+            <div class="col-md-8">
+                {{formulario_servicio.uso}}
+            </div> 
+        </div>
+        <div class="tile-footer">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-3">
+                <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Registrar</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+              </div>
+            </div>
+        </div>
     </form>
 </body>
 </html>
